@@ -5,10 +5,8 @@
 
 int GetHeight();
 void PrintPyramid(int h);
-// void PrintBlocks(int n);
-// void PrintSpaces(int n);
 void PrintElements(int n, char e);
-//Consider moving these into one-line in the get pyramid if wholly unnecessary.
+
 void PrintGap();
 int main(void){
     int height = GetHeight();
@@ -22,7 +20,7 @@ int GetHeight(){
     do{
         printf("Height: ");
         scanf("%i", &h);
-    }while(h < 0 || h > 8);
+    }while(h <= 0 || h > 8);
 
     return h;
 }
