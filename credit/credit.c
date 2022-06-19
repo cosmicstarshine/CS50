@@ -15,12 +15,23 @@ bool validateChecksum(long card);
 void PrintCard(bool valid, long card);
 
 int main(void){
-
+    int cardNumber = GetCardNumber();
+    bool isValid = validateChecksum(cardNumber);
+    printCard(isValid);
     return 0;
 }
+long GetCardNumber(){
+    //This doesn't handle invalid numbers yet.
+    //Solution will use <cs50.h>, and I do not know
+    //How to check for type in C yet.
+    long cardNum;
+    printf("Number: ");
+    scanf("%li", & cardNum);
+    return cardNum;
 
-bool validateChecksum(long card){
-    const int COMPAREVALUE = 20;
+}
+
+bool validateChecksum(long card){    
     long n = card;
     int doubledSum = 0;
     int singlesSum = 0;
@@ -38,7 +49,7 @@ bool validateChecksum(long card){
 
     }while(n > 0);
     int checkSum = doubledSum + singlesSum;
-    if(checkSum == COMPAREVALUE){
+    if(checkSum % 10 == 0){
         return true;
     }
     return false;
@@ -47,7 +58,8 @@ void PrintCard(bool valid, long card){
     if(!valid){
         printf("INVALID");
         return 0;
+    }else{
+        printf("VALID CARD");
     }
-
     //FIGURE OUT THIS PART.
 }
