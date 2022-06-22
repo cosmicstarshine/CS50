@@ -7,7 +7,7 @@ int GetHeight();
 void PrintPyramid(int h);
 void PrintElements(int n, char e);
 
-void PrintGap();
+
 int main(void){
     int height = GetHeight();
     PrintPyramid(height);
