@@ -53,7 +53,7 @@ bool ValidateChecksum(long long card, int *lead, int *numDigits){
 
         //Grabbing the leading digits.
         //Not all mastercards start with 5, but for this problem, ignoring.
-        if(n < 57L &&  n > 30L){
+        if(n < 57LL &&  n > 30LL){
             *lead = (int)n;
         }    
     }while(n > 0);
