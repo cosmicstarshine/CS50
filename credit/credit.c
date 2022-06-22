@@ -53,7 +53,7 @@ bool ValidateChecksum(long long card, int *lead, int *numDigits){
 
         //Grabbing the leading digits.
         //Not all mastercards start with 5, but for this problem, ignoring.
-        if(n < 57LL &&  n > 30LL){
+        if(n < 56LL &&  n > 30LL){
             *lead = (int)n;
         }    
     }while(n > 0);
@@ -79,7 +79,7 @@ void PrintCard(bool valid, int card, int numDigits){
     //Compare leading with expected number of CC digits.
 
     //MC check
-    if(card > 50 && card < 57 && numDigits == 16){
+    if(card > 50 && card < 56 && numDigits == 16){
         printf("MASTERCARD");
 
     //Visa check
