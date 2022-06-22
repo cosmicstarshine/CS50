@@ -7,7 +7,6 @@ int GetHeight();
 void PrintPyramid(int h);
 void PrintElements(int n, char e);
 
-
 int main(void){
     int height = GetHeight();
     PrintPyramid(height);
@@ -50,6 +49,6 @@ void PrintPyramid(int h){
 void PrintElements(int n, char e){
     for (int i = 0; i < n; i++){
         printf("%c", e);
-    };
+    }
 }
 
