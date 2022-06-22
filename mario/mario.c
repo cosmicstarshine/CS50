@@ -26,21 +26,21 @@ int GetHeight(){
 
 void PrintPyramid(int h){
     //Abstracting to avoid magic numbers.
-    const int maxSize = 8;
-    const int gapSpace = 2;
-    const char block = '#';
-    const char space = ' ';
+    int maxSize = 8;
+    const int GAP_SPACE = 2;
+    const char BLOCK = '#';
+    const char SPACE = ' ';
     int numBlocks;    
     for(int i = 0; i < h; i++){
         numBlocks = i+1;
         //Leading spaces;
-        PrintElements(maxSize - numBlocks, space);
+        PrintElements(maxSize - numBlocks, SPACE);
         //Right-aligned blocks;
-        PrintElements(numBlocks, block);
+        PrintElements(numBlocks, BLOCK);
         //Print the gap
-        PrintElements(gapSpace, space);
+        PrintElements(GAP_SPACE, SPACE);
         //Left-Aligned blocks;
-        PrintElements(numBlocks, block);
+        PrintElements(numBlocks, SPACE);
         //Newline
         printf("\n");
     }
