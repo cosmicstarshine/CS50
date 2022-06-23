@@ -3,7 +3,7 @@
 //Another implementation will be rewritten for the submission; This is exclusively for me to
 //figure out the solution.
 
-int GetHeight();
+int GetHeight(void);
 void PrintPyramid(int h);
 void PrintElements(int n, char e);
 
@@ -14,7 +14,7 @@ int main(void){
 }
 
 
-int GetHeight(){
+int GetHeight(void){
     int h;
     do{
         printf("Height: ");

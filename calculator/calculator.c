@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(){
+int main(void){
     long long x;
     long long y;
     printf("Enter an integer for x: ");

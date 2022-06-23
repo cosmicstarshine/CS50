@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include <stdbool.h>
 
-long long GetCardNumber();
+long long GetCardNumber(void);
 bool ValidateChecksum(long long card, int *lead, int *numDigits);
 void PrintCard(bool valid, int card, int numDigits);
 
@@ -13,7 +13,7 @@ int main(void){
     PrintCard(isValid, leadingDigits, ccNumDigits);
     return 0;
 }
-long long GetCardNumber(){
+long long GetCardNumber(void){
     //This doesn't handle invalid numbers yet.
     //Solution will use <cs50.h>, and I do not know
     //How to check for input type in C yet.
