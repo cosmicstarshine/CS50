@@ -1,46 +1,32 @@
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 
-//Determine grade level using Coleman-Liau index.
-//index = 0.0588 * L - 0.296 * S - 15.8, where:
-//L is the average number of letters per 100 words in the text and
-//S is the average number of sentences per 100 words.
-
-//For the purposes of the assignment, ignore the fact that periods don't always end a sentence.
-//Consider any punctuation marks to be the end of a sentence.
-//Assume that a sentence will not have multiple spaces in a row.
-
-//Flow:
-//Get string input.
-//Count the number of letters.
-//Count the number of words.
-//Count the number of sentences.
 
 
-void getString(char **str);
-int countLetters(char text[]);
-int countWords(char text[]);
-int countSentences(char text[]);
-int calculateGradeIndex(int l, int w, int s);
-void printGradeLevel(int index);
+void GetString(char **str);
+int CountLetters(char text[]);
+int CountWords(char text[]);
+int CoundSentences(char text[]);
+int CalculateGradeIndex(int l, int w, int s);
+void PrintGradeLevel(int index);
 
 int main(void){
     //initializing a string
     char *string;
     //Read the input.
-    getString(&string);
-    int numLetters = countLetters(string);
-    int numWords = countWords(string);
-    int numSentences = countSentences(string);
-    int gradeIndex = calculateGradeIndex(numLetters, numWords, numSentences);
-    printGradeLevel(gradeIndex);
+    GetString(&string);
+    int numLetters = CountLetters(string);
+    int numWords = CountWords(string);
+    int numSentences = CoundSentences(string);
+    int gradeIndex = CalculateGradeIndex(numLetters, numWords, numSentences);
+    PrintGradeLevel(gradeIndex);
     return 0;
 }
 
-void getString(char **str){
+void GetString(char **str){
     char tmp[500];
     int arrSize = 1;
     printf("Text: ");
@@ -53,7 +39,7 @@ void getString(char **str){
     strncpy(*str, tmp, arrSize);
 }
 
-int countLetters(char text[]){
+int CountLetters(char text[]){
     int counter = 0;
     for(int i = 0; text[i] != '\0'; i++){
         if(isalpha(text[i])){
@@ -63,7 +49,7 @@ int countLetters(char text[]){
     return counter;
 }
 
-int countWords(char text[]){
+int CountWords(char text[]){
     int counter = 0;
     for(int i = 0; text[i] != '\0'; i++){
         if(text[i]== ' '){
@@ -73,7 +59,7 @@ int countWords(char text[]){
     //Counter plus one due to break @ null char.
     return counter+1;
 }
-int countSentences(char text[]){
+int CoundSentences(char text[]){
     int counter = 0;
     for(int i = 0; text[i]!='\0'; i++){
         if(text[i]=='.'|| text[i] == '!'|| text[i] == '?'){
@@ -82,7 +68,7 @@ int countSentences(char text[]){
     }
     return counter;
 }
-int calculateGradeIndex(int l, int w, int s){
+int CalculateGradeIndex(int l, int w, int s){
     float letterAvg = ((float)l / w)*100;
     
     float sentAvg = ((float)s / w) * 100;
@@ -90,7 +76,7 @@ int calculateGradeIndex(int l, int w, int s){
 
 }
 
-void printGradeLevel(int index){
+void PrintGradeLevel(int index){
     if(index >=16){
         printf("Grade 16+");
     }else if(index <=0){
